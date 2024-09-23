@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { QRCodeSVG } from "qrcode.react";
 import { Box, Typography, Paper, Grid } from "@mui/material";
 import { SCAN_DATA } from "../../constants";
@@ -18,6 +19,7 @@ export const ScannerHistory = () => {
     setHistory(localStorageHistory);
   }, []);
 
+  console.log(history);
   return (
     <>
       {isLoading ? (
@@ -48,12 +50,16 @@ export const ScannerHistory = () => {
                       }}
                     >
                       <Typography
+                        component={Link}
+                        to={item}
+                        target="_blank"
                         color="secondary"
                         variant="body1"
                         sx={{ mb: 1, wordBreak: "break-all" }}
                       >
                         {item}
                       </Typography>
+
                       <QRCodeSVG value={item} size={100} />
                     </Paper>
                   </Grid>

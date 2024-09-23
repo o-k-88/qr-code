@@ -3,6 +3,7 @@ import { QRCodeSVG } from "qrcode.react";
 import { Box, Typography, Paper, Grid } from "@mui/material";
 import { GENERATE_DATA } from "../../constants";
 import Loader from "../Loader/Loader";
+import { Link } from "react-router-dom";
 
 export const GenerateHistory = () => {
   const [history, setHistory] = useState([]);
@@ -48,6 +49,9 @@ export const GenerateHistory = () => {
                       }}
                     >
                       <Typography
+                        component={Link}
+                        to={item}
+                        target="_blank"
                         color="secondary"
                         variant="body1"
                         sx={{ mb: 1, wordBreak: "break-all" }}

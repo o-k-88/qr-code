@@ -6,6 +6,7 @@ import { Layout } from "../components/Layout/Layout";
 
 import { ScannerHistory } from "../components/ScannerHistory/ScannerHistory";
 import { GenerateHistory } from "../components/GenerateHistory/GenerateHistory";
+import PageNotFound from "../components/PageNotFound/PageNotFound";
 
 export const RootRoute = () => {
   return (
@@ -15,6 +16,7 @@ export const RootRoute = () => {
         <Route path="/scanner" element={<QrCodeScanner />} />
         <Route path="/scanner-history" element={<ScannerHistory />} />
         <Route path="/generate-history" element={<GenerateHistory />} />
+        <Route path="*" element={<PageNotFound />} />
       </Route>
     </Routes>
   );

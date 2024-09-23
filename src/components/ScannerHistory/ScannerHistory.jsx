@@ -29,12 +29,11 @@ export const ScannerHistory = () => {
             p: 3,
           }}
         >
-          <Typography variant="h6" color="textSecondary">
-            List of your scanned items
-          </Typography>
-
           {history.length ? (
             <Grid container spacing={2}>
+              <Typography variant="h6" color="textSecondary">
+                List of your scanned items
+              </Typography>
               {history.map((item, index) => (
                 <Grid item xs={12} sm={6} md={3} key={index}>
                   <Paper
